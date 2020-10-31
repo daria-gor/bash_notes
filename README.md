@@ -39,8 +39,8 @@
 ##### Вырезаем первые 24 символа 
 ```
 cat text02.csv
-1111-1111-1111-1111-1111bonjovy.mp3
-2222-2222-2222-2222-2222scooter.ts
+1111-1111-1111-1111-1111song.mp3
+2222-2222-2222-2222-2222song.ts
 
 cat text02.csv | cut -c -24 > text03.csv
 cat text03.csv 
@@ -53,9 +53,9 @@ cat text03.csv
 ```
 cat text.csv
 
-/home/users/X/desktop;320;1111-1111-1111-1111-1111bonjovy.mp3
-/home/users/X;540;2222-2222-2222-2222-2222scooter.ts
-/home/users;820;3333-3333-3333-3333-3333rammstein.m3u
+/home/users/X/desktop;320;1111-1111-1111-1111-1111song.mp3
+/home/users/X;540;2222-2222-2222-2222-2222song.ts
+/home/users;820;3333-3333-3333-3333-3333song.m3u
 
 cat text.csv | awk -F\; '{print $1 ";" $2 ";" substr($3,1,24)}' > text_1.csv 
 cat text_1.csv 
@@ -67,13 +67,13 @@ cat text_1.csv
 ##### Обрезка "хвоста" в 3-ей колонке до 24 символов и добавление ее в начало при этом 3-я останется неизменной 
 ```
 cat text.csv
-/home/users/X/desktop;320;1111-1111-1111-1111-1111bonjovy.mp3
-/home/users/X;540;2222-2222-2222-2222-2222scooter.ts
-/home/users;820;3333-3333-3333-3333-3333rammstein.m3u
+/home/users/X/desktop;320;1111-1111-1111-1111-1111song.mp3
+/home/users/X;540;2222-2222-2222-2222-2222song.ts
+/home/users;820;3333-3333-3333-3333-3333song.m3u
 
 cat text.csv | awk -F\; '{print substr($3,1,24) ";" $1 ";" $2 ";" $3}' > text04.csv
 cat text04.csv 
-1111-1111-1111-1111-1111;/home/users/X/desktop;320;1111-1111-1111-1111-1111bonjovy.mp3
-2222-2222-2222-2222-2222;/home/users/X;540;2222-2222-2222-2222-2222scooter.ts
-3333-3333-3333-3333-3333;/home/users;820;3333-3333-3333-3333-3333ramstein.m3u
+1111-1111-1111-1111-1111;/home/users/X/desktop;320;1111-1111-1111-1111-1111song.mp3
+2222-2222-2222-2222-2222;/home/users/X;540;2222-2222-2222-2222-2222song.ts
+3333-3333-3333-3333-3333;/home/users;820;3333-3333-3333-3333-3333song.m3u
 ```
