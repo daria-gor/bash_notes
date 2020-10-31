@@ -1,3 +1,3 @@
 # bash_notes
 
-Simple notes on bash
+Простые заметки по Bash и некоторые полезные команды awk в работе с файлами csv
